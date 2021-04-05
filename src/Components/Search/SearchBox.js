@@ -2,8 +2,8 @@ import React, { useState, useContext } from "react";
 import Spinner from "react-bootstrap/Spinner";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { StateContext } from "../Context/StateProvider";
-import { ConstructURL } from "./ConstructURL";
+import { StateContext } from "../../Context/StateProvider";
+import { ConstructURL } from "../ConstructURL";
 
 export default function SearchBox() {
   let [searchVal, setSearchVal] = useState("");
