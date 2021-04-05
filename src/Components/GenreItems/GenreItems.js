@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { StateContext } from "../Context/StateProvider.js";
+import { StateContext } from "../../Context/StateProvider.js";
 import Dropdown from "react-bootstrap/Dropdown";
 
 export default function GenreItems() {
@@ -35,7 +35,7 @@ export default function GenreItems() {
             return (
               <Dropdown.Item
                 key={genre.id}
-                href="#/action-1"
+                // href="/action-1"
                 onClick={() => handleClick(genre.id)}
               >
                 {genre.name}

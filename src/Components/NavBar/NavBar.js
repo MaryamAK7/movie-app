@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SearchBox from "../Components/SearchBox.js";
+import SearchBox from "../Search/SearchBox.js";
+
 export default function NavBar() {
   return (
     <div className="navbar">

@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.css";
-import Footer from "./Components/Footer.js";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from "./Components/Footer/Footer.js";
 import NavBar from "./Components/NavBar/NavBar.js";
 import SideBar from "./Components/SideBar/SideBar.js";
 import MainPage from "./Pages/MainPage/MainPage.js";
-import MoviePage from "./Pages/MoviePage/MoviePage.js";
-import AboutPage from "./Pages/AboutPage/AboutPage";
+import MoviePage from "./Pages/SingleMoviePage/SingleMoviePage.js";
+import AboutPage from "./Pages/AboutPage/AboutPage.js";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 

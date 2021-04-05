@@ -1,6 +1,6 @@
 import React from "react";
-import GenreItems from "../Components/GenreItems.js";
-import DateItems from "../Components/DateItems.js";
+import GenreItems from "../../Components/GenreItems/GenreItems.js";
+import DateItems from "../../Components/DateItems/DateItems.js";
 
 export default function SideBar() {
   return (

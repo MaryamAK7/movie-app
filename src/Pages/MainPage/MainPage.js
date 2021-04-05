@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import MovieGrid from "../../Components/MovieGrid/MovieGrid";
+import MovieGrid from "../../Components/MovieGrid/MovieGrid.js";
 import { StateContext } from "../../Context/StateProvider.js";
 
 export default function MainPage() {
