@@ -13,8 +13,8 @@ export default function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/About/">About</Nav.Link>
+            <Nav.Link href="/movie-app/">Home</Nav.Link>
+            <Nav.Link href="/movie-app/About/">About</Nav.Link>
           </Nav>
           <div inline>
             <SearchBox />
