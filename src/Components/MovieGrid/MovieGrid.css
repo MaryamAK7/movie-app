@@ -1,0 +1,9 @@
+.moviesGrid{
+    display:grid;
+    grid-template-columns: auto auto auto auto ;
+    grid-gap: 25px;
+    margin: 20px;
+}
+.movie-grid-title{
+    margin: 20px;
+}

@@ -4,10 +4,11 @@ import Form from "react-bootstrap/Form";
 import Button from 'react-bootstrap/Button';
 import { StateContext } from "../../Context/StateProvider";
 import { ConstructURL } from "../ConstructURL";
+import './SearchBox.css';
 
 export default function SearchBox() {
   const [searchVal, setSearchVal] = useState("");
-  const [state, dispatch] = useContext(StateContext);
+  const [, dispatch] = useContext(StateContext);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -23,7 +24,12 @@ export default function SearchBox() {
 
   return (
     <div className="searchBox">
-      <Form onSubmit={handleSubmit}>
+       {searchVal.length === 0 ? (
+          ""
+        ) : (
+          <Spinner animation="border" role="status" variant="success" className='search-spinner'></Spinner>
+        )}
+      <Form onSubmit={handleSubmit} className='search-form'>
         <Form.Control
           type="text"
           placeholder="Search for a movie.."
@@ -31,14 +37,9 @@ export default function SearchBox() {
           onChange={(e) => setSearchVal(e.target.value)}
           required
         />
-        <Button variant="primary" type="submit">
+        <Button variant="success" type="submit" className='search-btn'>
           Search
         </Button>
-        {searchVal.length === 0 ? (
-          ""
-        ) : (
-          <Spinner animation="border" role="status" variant="primary"></Spinner>
-        )}
       </Form>
     </div>
   );

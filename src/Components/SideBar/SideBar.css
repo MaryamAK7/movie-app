@@ -1,0 +1,7 @@
+.sideBar{
+    /* width: fit-content; */
+    display: flex;
+    justify-content:flex-end;
+    margin-right: 10px;
+    /* align-items: flex-end; */
+}

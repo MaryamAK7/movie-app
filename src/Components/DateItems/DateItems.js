@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { StateContext } from "../../Context/StateProvider.js";
 import Dropdown from "react-bootstrap/Dropdown";
+import './DateItems.css';
 
 export default function DateItems() {
-  const [state, dispatch] = useContext(StateContext);
+  const [, dispatch] = useContext(StateContext);
 
   const dates = [2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011];
 
@@ -19,7 +20,7 @@ export default function DateItems() {
   return (
     <div>
       <Dropdown className="dropdown">
-        <Dropdown.Toggle variant="primary">Release Date</Dropdown.Toggle>
+        <Dropdown.Toggle variant="success" className='drop-date'>Release Date</Dropdown.Toggle>
         <Dropdown.Menu>
           {dates.map((date) => {
             return (

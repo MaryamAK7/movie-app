@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { StateContext } from "../../Context/StateProvider.js";
 import Dropdown from "react-bootstrap/Dropdown";
+import Spinner from "react-bootstrap/Spinner";
+import './GenreItems.css';
 
 export default function GenreItems() {
   const [state, dispatch] = useContext(StateContext);
@@ -27,10 +29,15 @@ export default function GenreItems() {
   return (
     <div>
       <Dropdown onClick={fetchGenres} className="dropdown">
-        <Dropdown.Toggle variant="primary" id="dropdown-basic">
+        <Dropdown.Toggle variant="success" id="dropdown-basic" className='drop-genre'>
           Genres
         </Dropdown.Toggle>
         <Dropdown.Menu>
+        {state.genres.length !== 0 ? (
+          ""
+        ) : (
+          <Spinner animation="border" role="status" variant="success" className='search-spinner'></Spinner>
+        )}
           {state.genres.map((genre) => {
             return (
               <Dropdown.Item

@@ -1,0 +1,21 @@
+
+.navbar-movie{
+    width: 100vw;
+    color: black !important;
+    background-color: #b82b43ef ;
+    /* box-shadow: 0px 0px 10px 2px #831829ef ; */
+}
+.logo{
+    width: 50px;
+    margin-right: 10px;
+}
+.navbar-brand{
+    color: rgb(255, 255, 255) !important;
+    font-weight: 700;
+}
+.navbar-light .navbar-nav .nav-link{
+    color: rgba(255, 255, 255, 0.808) !important;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+    color: rgb(255, 255, 255) !important;
+}

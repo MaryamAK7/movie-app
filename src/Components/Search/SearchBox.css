@@ -1,0 +1,18 @@
+.search-form{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+.searchBox{
+    display: flex;
+    justify-content: space-between; 
+}
+.search-spinner{
+    margin-top: 3px;
+}
+.search-btn{
+    background-color: #a5263bef !important;
+    /* box-shadow: 0px 0px 5px #16b686 ; */
+    color: rgb(255, 255, 255) !important;
+    border: none;
+}

@@ -1,0 +1,30 @@
+.single-movie-page{
+    height: 100%;
+}
+.single-movie-card{
+    width: 80vw;
+    display: flex;
+    margin: auto;
+}
+.single-movie-image{
+    margin: 20px;
+    width: auto;
+    height: 75vh;
+}
+.single-movie-info{
+    margin: 20px;
+    width: 50%;
+    
+}
+.single-movie-title{
+    color: #b82b43ef;
+    margin: 30px 0px;
+}
+.single-movie-desc{
+    text-align: justify;
+    margin: 10px 0px;
+}
+span{
+    color: #949494;
+    /* text-shadow: 1px 1px 0.5px rgb(211, 26, 26); */
+}
