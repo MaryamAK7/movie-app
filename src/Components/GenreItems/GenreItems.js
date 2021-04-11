@@ -36,13 +36,12 @@ export default function GenreItems() {
         {state.genres.length !== 0 ? (
           ""
         ) : (
-          <Spinner animation="border" role="status" variant="success" className='search-spinner'></Spinner>
+          <Spinner animation="border" role="status" variant="dark" className='search-spinner'></Spinner>
         )}
           {state.genres.map((genre) => {
             return (
               <Dropdown.Item
                 key={genre.id}
-                // href="/action-1"
                 onClick={() => handleClick(genre.id)}
               >
                 {genre.name}

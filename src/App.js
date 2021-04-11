@@ -16,7 +16,6 @@ export default function App() {
       <Router>
         <NavBar />
         <div className="flex-container">
-          <SideBar />
           <Route exact path="/">
             <MainPage />
           </Route>

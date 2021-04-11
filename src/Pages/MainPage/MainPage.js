@@ -24,7 +24,8 @@ export default function MainPage() {
   },[])
   return (
     <div className="main">
-      {state.movies.length === 0 ?  <Spinner animation="border" role="status" variant="success" className='search-spinner'></Spinner> : <MovieGrid />}    
+      <SideBar />
+      {state.movies.length === 0 ?  <Spinner animation="border" role="status" variant="dark" className='search-spinner'></Spinner> : <MovieGrid />}    
     </div>
   );
 }
