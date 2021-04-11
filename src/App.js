@@ -17,13 +17,13 @@ export default function App() {
         <NavBar />
         <div className="flex-container">
           <SideBar />
-          <Route exact path="/movie-app/">
+          <Route exact path="/">
             <MainPage />
           </Route>
-          <Route path="/movie-app//movie/:id">
+          <Route path="/movie/:id">
             <MoviePage />
           </Route>
-          <Route path="/movie-app//about/">
+          <Route path="/about/">
             <AboutPage />
           </Route>
         </div>
