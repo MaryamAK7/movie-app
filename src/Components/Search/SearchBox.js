@@ -27,7 +27,7 @@ export default function SearchBox() {
        {searchVal.length === 0 ? (
           ""
         ) : (
-          <Spinner animation="border" role="status" variant="success" className='search-spinner'></Spinner>
+          <Spinner animation="border" role="status" variant="light" className='search-spinner'></Spinner>
         )}
       <Form onSubmit={handleSubmit} className='search-form'>
         <Form.Control

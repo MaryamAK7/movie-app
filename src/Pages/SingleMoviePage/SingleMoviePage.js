@@ -19,7 +19,7 @@ export default function SingleMoviePage() {
         <Spinner
           animation="border"
           role="status"
-          variant="success"
+          variant="danger"
           className="search-spinner"
         ></Spinner>
       ) : (

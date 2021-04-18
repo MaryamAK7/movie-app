@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import MovieGrid from "../../Components/MovieGrid/MovieGrid.js";
+import SideBar from '../../Components/SideBar/SideBar'
 import { StateContext } from "../../Context/StateProvider.js";
 import Spinner from "react-bootstrap/Spinner";
 import "./MainPage.css";
@@ -25,7 +26,7 @@ export default function MainPage() {
   return (
     <div className="main">
       <SideBar />
-      {state.movies.length === 0 ?  <Spinner animation="border" role="status" variant="dark" className='search-spinner'></Spinner> : <MovieGrid />}    
+      {state.movies.length === 0 ?  <Spinner animation="border" role="status" variant="danger" className='search-spinner'></Spinner> : <MovieGrid />}    
     </div>
   );
 }
