@@ -2,19 +2,19 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { StateContext } from "../../Context/StateProvider.js";
 import Spinner from "react-bootstrap/Spinner";
+import { useHistory } from "react-router-dom";
 import "./SingleMoviePage.css";
 
 export default function SingleMoviePage() {
   const movieId = useParams();
   const [movie, setMovie] = useState([]);
   const [state] = useContext(StateContext);
-
+  let history = useHistory();
   useEffect(() => {
     const res = state.movies.filter((mov) => mov.id === parseInt(movieId.id));
     setMovie(res);
   }, [state.movies, movieId]);
-  return (
-    <div className="single-movie-page">
+  return ( <>
       {movie.length === 0 ? (
         <Spinner
           animation="border"
@@ -23,6 +23,8 @@ export default function SingleMoviePage() {
           className="search-spinner"
         ></Spinner>
       ) : (
+        <div className="single-movie-page">
+      <div className="backSingleMovie" onClick={() => history.goBack()}> back</div>
         <div className="single-movie-card">
           <img
             className="single-movie-image"
@@ -38,7 +40,10 @@ export default function SingleMoviePage() {
             <div className="single-movie-voteCount"><span>Vote count:</span> {movie[0].vote_count}</div>
           </div>
         </div>
+        </div>
       )}
-    </div>
+    
+    </>
   );
+  
 }
