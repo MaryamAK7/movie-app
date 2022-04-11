@@ -1,9 +1,8 @@
 .about{
-    height: 100vh;
     width: 50%;
     font-size: x-large;
     font-style: italic;
-    margin: 50px auto;
+    margin: auto 10px;
     color: rgb(160, 136, 136);
 }
 .enjoyAbout{
@@ -12,4 +11,14 @@
 .aboutDesc{
     font-size: medium;
     margin-top: 20px;
+}
+.AboutPage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.aboutImg{
+    margin: auto 20px;
+    width: 30%;
 }
