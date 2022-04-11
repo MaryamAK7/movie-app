@@ -9,7 +9,7 @@ import './SearchBox.css';
 export default function SearchBox() {
   const [searchVal, setSearchVal] = useState("");
   const [, dispatch] = useContext(StateContext);
-
+  const [noRes, setNoRes] = useState("");
   function handleSubmit(e) {
     e.preventDefault();
     fetchMovies(searchVal);
@@ -20,9 +20,21 @@ export default function SearchBox() {
       await fetch(ConstructURL("search/movie", searchVal))
     ).json();
     dispatch({ type: "SET_Movies", payload: results });
+    
+    if(results.length === 0 ){
+      setNoRes('No Results Found! Try something else :)')
+    const{results} = await (
+      await fetch(
+        `https://api.themoviedb.org/3//trending/movie/week?api_key=${atob(
+          "ZDJmYTdhZDFlMjZhZjA4NDdkMzQ5ZDdkYmQ1ZjkzZTU="
+        )}`
+      )
+    ).json();
+    dispatch({type: "SET_Movies", payload : results});
+    } else setNoRes("")
   };
 
-  return (
+  return ( <div className="searchPlusRes">
     <div className="searchBox">
        {searchVal.length === 0 ? (
           ""
@@ -34,13 +46,17 @@ export default function SearchBox() {
           type="text"
           placeholder="Search for a movie.."
           value={searchVal}
-          onChange={(e) => setSearchVal(e.target.value)}
+          onChange={(e) => {setSearchVal(e.target.value);}}
           required
         />
         <Button variant="success" type="submit" className='search-btn'>
           Search
         </Button>
       </Form>
+    </div>
+    <div className="noResFound"> 
+          {noRes}
+      </div>
     </div>
   );
 }
