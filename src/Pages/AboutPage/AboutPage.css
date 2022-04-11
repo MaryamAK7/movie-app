@@ -1,3 +1,15 @@
 .about{
     height: 100vh;
+    width: 50%;
+    font-size: x-large;
+    font-style: italic;
+    margin: 50px auto;
+    color: rgb(160, 136, 136);
+}
+.enjoyAbout{
+    margin: 50px;
+}
+.aboutDesc{
+    font-size: medium;
+    margin-top: 20px;
 }
