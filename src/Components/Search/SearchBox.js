@@ -1,19 +1,23 @@
 import React, { useState, useContext } from "react";
-import Spinner from "react-bootstrap/Spinner";
 import Form from "react-bootstrap/Form";
 import Button from 'react-bootstrap/Button';
 import { StateContext } from "../../Context/StateProvider";
 import { ConstructURL } from "../ConstructURL";
+import { useHistory } from "react-router-dom";
 import './SearchBox.css';
 
 export default function SearchBox() {
   const [searchVal, setSearchVal] = useState("");
   const [, dispatch] = useContext(StateContext);
   const [noRes, setNoRes] = useState("");
+  let history = useHistory();
+
   function handleSubmit(e) {
     e.preventDefault();
+    history.push('/');
     fetchMovies(searchVal);
     setSearchVal("");
+
   }
   const fetchMovies = async (searchVal) => {
     const { results } = await (
@@ -31,16 +35,12 @@ export default function SearchBox() {
       )
     ).json();
     dispatch({type: "SET_Movies", payload : results});
-    } else setNoRes("")
+    } else {setNoRes(""); dispatch({ type: "SET_title", payload: searchVal }); }
   };
 
   return ( <div className="searchPlusRes">
     <div className="searchBox">
-       {searchVal.length === 0 ? (
-          ""
-        ) : (
-          <Spinner animation="border" role="status" variant="light" className='search-spinner'></Spinner>
-        )}
+       
       <Form onSubmit={handleSubmit} className='search-form'>
         <Form.Control
           type="text"
@@ -49,9 +49,13 @@ export default function SearchBox() {
           onChange={(e) => {setSearchVal(e.target.value);}}
           required
         />
+        
         <Button variant="success" type="submit" className='search-btn'>
+       
           Search
+        
         </Button>
+       
       </Form>
     </div>
     <div className="noResFound"> 
