@@ -14,13 +14,10 @@ export default function MovieItem({ movie }) {
          <Card.ImgOverlay className='card-overlay-item'>
           
           <Card.Title> {movie.title} </Card.Title>
-          {/* <Card.Text> */}
           <div className = 'cardDesc'> 
             <div>{movie.release_date}</div>
-            {/* </Card.Text> */}
-          {/* <Card.Text> */}
             <div> {movie.vote_average} <img src={star} className='img-card' alt={movie.title}/> </div></div>
-            {/* </Card.Text> */}
+      
            
         </Card.ImgOverlay> 
       </Card>
