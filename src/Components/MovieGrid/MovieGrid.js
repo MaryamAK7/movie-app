@@ -9,6 +9,7 @@ export default function MovieGrid() {
   return (
     <div >
       <h1 className='movie-grid-title'>Choose your movie</h1>
+      {state.title == '' ? '' : <div className='movie-grid-subtitle'>Showing Results for : {state.title}</div>}
       <div className="moviesGrid"> 
       {state.movies.map((movie) => {
         console.log(movie);

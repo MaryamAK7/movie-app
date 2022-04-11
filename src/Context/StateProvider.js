@@ -4,7 +4,8 @@ export const StateContext = createContext();
 
 const initialState = {
   movies: [],
-  genres: []
+  genres: [],
+  title : ''
 };
 
 const reducer = (state, action) => {
@@ -13,6 +14,8 @@ const reducer = (state, action) => {
       return { ...state, movies: action.payload };
     case "SET_Genres":
       return { ...state, genres: action.payload };
+    case "SET_title":
+      return { ...state, title: action.payload };
     default:
       return state;
   }

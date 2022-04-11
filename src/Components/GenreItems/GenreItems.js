@@ -17,13 +17,14 @@ export default function GenreItems() {
     dispatch({ type: "SET_Genres", payload: genres });
   };
 
-  const handleClick = async (id) => {
+  const handleClick = async (id, name) => {
     const data = await (
       await fetch(
         `https://api.themoviedb.org/3/discover/movie?api_key=d2fa7ad1e26af0847d349d7dbd5f93e5&language=en-US&with_genres=${id}&page=1`
       )
     ).json();
     dispatch({ type: "SET_Movies", payload: data.results });
+    dispatch({type:"SET_title", payload: name});
   };
 
   return (
@@ -42,7 +43,7 @@ export default function GenreItems() {
             return (
               <Dropdown.Item
                 key={genre.id}
-                onClick={() => handleClick(genre.id)}
+                onClick={() => handleClick(genre.id, genre.name)}
               >
                 {genre.name}
               </Dropdown.Item>

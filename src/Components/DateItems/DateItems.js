@@ -15,6 +15,7 @@ export default function DateItems() {
       )
     ).json();
     dispatch({ type: "SET_Movies", payload: data.results });
+    dispatch({type:"SET_title", payload: id})
   };
 
   return (
