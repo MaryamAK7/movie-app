@@ -21,7 +21,7 @@ export default function App() {
           <Route path="/movie/:id">
             <MoviePage />
           </Route>
-          <Route path="/about/">
+          <Route path="/about">
             <AboutPage />
           </Route>
         </div>
